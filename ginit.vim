@@ -1,1 +1,1 @@
-GuiFont! Hack:h11
+source $MYVIMRC

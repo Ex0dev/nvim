@@ -25,7 +25,7 @@ set foldnestmax=10
 " }}}
 
 " Plugin Install {{{
-call plug#begin('$LOCALAPPDATA/nvim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 " Color Schemes
 Plug 'chriskempson/base16-vim'
@@ -55,6 +55,9 @@ Plug 'scrooloose/syntastic'
 Plug 'neomake/neomake'
 Plug 'tpope/vim-repeat'
 Plug 'w0rp/ale'
+Plug 'dbeniamine/cheat.sh-vim'
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'tpope/vim-fugitive'
 
 " Languages
 Plug 'rust-lang/rust.vim'
@@ -67,10 +70,9 @@ call plug#end()
 " }}}
 
 " Plugin Settings {{{
-let g:python_host_prog = 'C:\Python27\python.exe'
-let g:python3_host_prog = 'C:\Program Files\Python36\python.exe'
+let g:python3_host_prog = 'python'
 let g:ackprg='ag --vimgrep'
-let g:tagbar_ctags_bin='C:\Vim\ctags\ctags.exe'
+" let g:tagbar_ctags_bin='C:\Vim\ctags\ctags.exe'
 
 " Javascript Settings {{{
 let g:javascript_plugin_flow = 1
