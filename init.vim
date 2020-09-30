@@ -6,7 +6,7 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 set nu
-set cursorline
+" set cursorline
 filetype plugin indent on
 set wildmenu
 set lazyredraw
@@ -46,13 +46,11 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-surround'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-clang'
 Plug 'wokalski/autocomplete-flow'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
-Plug 'tweekmonster/deoplete-clang2'
 Plug 'Shougo/neoinclude.vim'
-Plug 'scrooloose/syntastic'
-Plug 'neomake/neomake'
 Plug 'tpope/vim-repeat'
 Plug 'w0rp/ale'
 Plug 'dbeniamine/cheat.sh-vim'
@@ -70,7 +68,7 @@ call plug#end()
 " }}}
 
 " Plugin Settings {{{
-let g:python3_host_prog = 'python'
+let g:python3_host_prog = 'python3'
 let g:ackprg='ag --vimgrep'
 " let g:tagbar_ctags_bin='C:\Vim\ctags\ctags.exe'
 
@@ -87,18 +85,11 @@ let g:ale_fixers = {
 \}
 " }}}
 
-" Deoplete & Neomake Config {{{
+" Deoplete Config {{{
 let g:deoplete#enable_on_startup=1
-let g:deoplete#sources#clang#executable = 'C:\Program Files\LLVM\bin\clang.exe'
-let g:deoplete#sources#clang#clang_header = 'C:\Program Files\LLVM\include'
-let g:deoplete#sources#clang#std = {'c': 'c11', 'cpp': 'c++17', 'objc': 'c11', 'objcpp': 'c++17'}
-let g:deoplete#sources#clang#autofill_neomake = 1
-let g:neomake_c_enabled_makers = ['clang']
-let g:neomake_cpp_enabled_makers = ['clang']
-set completeopt-=preview
-
-" let g:neomake_open_list = 2
-" call neomake#configure#automake('w')
+" set completeopt-=preview
+let g:deoplete#sources#clang#libclang_path='/usr/lib/x86_64-linux-gnu/libclang-11.so.1'
+let g:deoplete#sources#clang#clang_header='/usr/lib/clang/11/include'
 " }}}
 
 " NERDTree Settings {{{
@@ -117,7 +108,7 @@ let g:ctrlp_user_command='ag %s -l --nocolor --hidden -g ""'
 set encoding=utf-8
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'base16_atelierdune'
-colorscheme base16-atelier-dune
+" colorscheme base16-atelier-dune
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
