@@ -37,7 +37,8 @@ Plug 'vim-airline/vim-airline-themes'
 
 " Utilities
 Plug 'sjl/gundo.vim'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'mileszs/ack.vim'
 Plug 'skywind3000/asyncrun.vim'
@@ -45,8 +46,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-surround'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-clang'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'wokalski/autocomplete-flow'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
